@@ -1,0 +1,16 @@
+page-start {
+    .vertical-align-content > *
+    {
+        display: flex ;
+        justify-content: center ;
+        align-items: center ;
+        background-color : black;
+    }
+
+    h1{
+        font-size : 3em;
+        color : white;
+    }
+
+
+}

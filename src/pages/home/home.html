@@ -1,17 +1,35 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+      <ion-title>
+          Oeuvres: {{nb_checked}}/{{total}}
+      </ion-title>
   </ion-navbar>
 </ion-header>
+<ion-content >
+    <ion-list *ngFor="let events of getArtsInfoTable">
+        <!-- <ion-checkbox checked="false" color ="dark" [(ngModel)]="mushrooms"></ion-checkbox> -->
+        <ion-item class="container">
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+          <ion-card class="row">
+
+            <div class="col-4">
+              <img src="../../assets/imgs/{{events.qrcode}}.jpg" />  
+            </div>
+
+            <div class="col-8">
+              <h2>{{events.name}}</h2>
+              <p>{{events.qrcode}}</p>          
+            </div>
+
+              <!-- <ion-input><!-- </ion-input> -->
+           <!-- <ion-checkbox checked="false" color ="dark"></ion-checkbox>  -->
+          
+          <ion-item >       
+              <ion-checkbox checked={{events.viewed}}   disabled="true"></ion-checkbox>
+            </ion-item>
+          </ion-card>
+        </ion-item>
+        
+
+    </ion-list>
 </ion-content>
